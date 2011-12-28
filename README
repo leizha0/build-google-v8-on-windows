@@ -1,3 +1,9 @@
+== what's this? ==
+
+When I was trying to build google-v8 on Windows, I had to install many tools - gyp, depot_tools, svn and something I even forgot. I had to install them all one by one. Documents are very inconsistent.
+I decided to write my own build script which does everything in one place. To build v8 with this project, you need only VC compiler kit which comes with VS Express or Windows SDK and python.
+I have tested the script with VS2010 Express/Ultimate and VS2011 Preview.
+
 == prerequisites ==
 
 visual studio 2010 express
