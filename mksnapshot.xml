@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Build">
+  <Import Project="v8.common.prop.xml"/>
+  
+  <ItemGroup>
+    <ClCompile Include="$(srcdir)mksnapshot.cc" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <exename>mksnapshot</exename>
+    <dep>$(bindir)v8_base.lib;$(bindir)v8_nosnapshot.lib;ws2_32.lib;winmm.lib;ws2_32.lib</dep>
+  </PropertyGroup>
+
+  <Import Project="cl.targets.xml"/>
+  <Target Name="Build" DependsOnTargets="cl;linkexe"/>
+</Project>

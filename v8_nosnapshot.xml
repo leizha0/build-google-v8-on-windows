@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Build">
+  <Import Project="v8.common.prop.xml"/>
+  <Import Project="cl.targets.xml"/>
+
+  <Target Name="js2c">
+    <Message Text="js2c libraries.cc" />
+    <Exec Command="$(pythondir)python $(toolsdir)js2c.py $(intdir)libraries.cc CORE off $(srcdir)runtime.js $(srcdir)v8natives.js $(srcdir)array.js $(srcdir)string.js $(srcdir)uri.js $(srcdir)math.js $(srcdir)messages.js $(srcdir)apinatives.js $(srcdir)debug-debugger.js $(srcdir)mirror-debugger.js $(srcdir)liveedit-debugger.js $(srcdir)date.js $(srcdir)json.js $(srcdir)regexp.js $(srcdir)macros.py" />
+    <Message Text="js2c experimental-libraries.cc" />
+    <Exec Command="$(pythondir)python $(toolsdir)js2c.py $(intdir)experimental-libraries.cc EXPERIMENTAL off $(srcdir)macros.py $(srcdir)proxy.js $(srcdir)collection.js" />
+  </Target>
+
+  <ItemGroup>
+    <ClCompile Include="$(srcdir)snapshot-empty.cc" />
+    <ClCompile Include="$(intdir)libraries.cc" />
+    <ClCompile Include="$(intdir)experimental-libraries.cc" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <libname>v8_nosnapshot</libname>
+  </PropertyGroup>
+  
+  <Target Name="Build" DependsOnTargets="js2c;cl;lib"/>
+</Project>

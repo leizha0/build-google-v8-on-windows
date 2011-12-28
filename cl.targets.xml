@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="CL" AssemblyName="Microsoft.Build.CppTasks.Win32, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="LIB" AssemblyName="Microsoft.Build.CppTasks.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Link" AssemblyName="Microsoft.Build.CppTasks.Win32, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  
+  <Target Name="cl">
+    <Message Text="src: @(ClCompile)" />
+    <CL MultiProcessorCompilation="true"
+        Sources="@(ClCompile)"
+        AdditionalIncludeDirectories="$(srcdir)"
+        PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;ENABLE_DEBUGGER_SUPPORT;V8_TARGET_ARCH_IA32;DEBUG;ENABLE_DISASSEMBLER;V8_ENABLE_CHECKS;OBJECT_PRINT;_DEBUG;_LIB"
+        DisableSpecificWarnings="4355;4800;4351"
+        ObjectFileName="$(objdir)">
+      <Output TaskParameter="ObjectFiles" ItemName="obj" />
+    </CL>
+    <Message Text="obj: @(obj)" />
+  </Target>
+
+  <Target Name="lib">
+    <Message Text="lib: $(libname).lib" />
+    <LIB Sources="@(obj)" OutputFile="$(bindir)$(libname).lib" />
+  </Target>
+  
+  <Target Name="linkexe">
+    <Message Text="link: $(exename).exe" />
+    <Link Sources="@(obj)" OutputFile="$(bindir)$(exename).exe" AdditionalDependencies="$(dep)" />
+  </Target>
+</Project>

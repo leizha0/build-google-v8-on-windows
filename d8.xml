@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Build">
+  <Import Project="v8.common.prop.xml"/>
+
+  <Target Name="js2c">
+    <Exec Command="$(pythondir)python $(toolsdir)js2c.py $(intdir)d8-js.cc D8 off $(srcdir)d8.js $(srcdir)macros.py" />
+  </Target>
+  
+  <ItemGroup>
+    <ClCompile Include="$(srcdir)d8.cc" />
+    <ClCompile Include="$(srcdir)d8-debug.cc" />
+    <ClCompile Include="$(srcdir)d8-windows.cc" />
+    <ClCompile Include="$(intdir)d8-js.cc" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <exename>d8</exename>
+    <dep>$(bindir)v8_base.lib;$(bindir)v8_snapshot.lib;Winmm.lib;ws2_32.lib</dep>
+  </PropertyGroup>
+
+  <Import Project="cl.targets.xml"/>
+  <Target Name="Build" DependsOnTargets="js2c;cl;linkexe"/>
+</Project>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Build">
+  <Import Project="v8.common.prop.xml"/>
+  <Import Project="cl.targets.xml"/>
+  
+  <ItemGroup>
+    <ClCompile Include="$(srcdir)circular-queue.cc" />
+    <ClCompile Include="$(srcdir)hashmap.cc" />
+    <ClCompile Include="$(srcdir)full-codegen.cc" />
+    <ClCompile Include="$(srcdir)inspector.cc" />
+    <ClCompile Include="$(srcdir)execution.cc" />
+    <ClCompile Include="$(srcdir)hydrogen.cc" />
+    <ClCompile Include="$(srcdir)debug.cc" />
+    <ClCompile Include="$(srcdir)builtins.cc" />
+    <ClCompile Include="$(srcdir)global-handles.cc" />
+    <ClCompile Include="$(srcdir)platform-win32.cc" />
+    <ClCompile Include="$(srcdir)regexp-macro-assembler-irregexp.cc" />
+    <ClCompile Include="$(srcdir)dtoa.cc" />
+    <ClCompile Include="$(srcdir)debug-agent.cc" />
+    <ClCompile Include="$(srcdir)objects-printer.cc" />
+    <ClCompile Include="$(srcdir)token.cc" />
+    <ClCompile Include="$(srcdir)code-stubs.cc" />
+    <ClCompile Include="$(srcdir)objects-debug.cc" />
+    <ClCompile Include="$(srcdir)win32-math.cc" />
+    <ClCompile Include="$(srcdir)store-buffer.cc" />
+    <ClCompile Include="$(srcdir)type-info.cc" />
+    <ClCompile Include="$(srcdir)runtime-profiler.cc" />
+    <ClCompile Include="$(srcdir)disassembler.cc" />
+    <ClCompile Include="$(srcdir)scopes.cc" />
+    <ClCompile Include="$(srcdir)factory.cc" />
+    <ClCompile Include="$(srcdir)api.cc" />
+    <ClCompile Include="$(srcdir)accessors.cc" />
+    <ClCompile Include="$(srcdir)dateparser.cc" />
+    <ClCompile Include="$(srcdir)func-name-inferrer.cc" />
+    <ClCompile Include="$(srcdir)scopeinfo.cc" />
+    <ClCompile Include="$(srcdir)string-stream.cc" />
+    <ClCompile Include="$(srcdir)bootstrapper.cc" />
+    <ClCompile Include="$(srcdir)fixed-dtoa.cc" />
+    <ClCompile Include="$(srcdir)log.cc" />
+    <ClCompile Include="$(srcdir)frames.cc" />
+    <ClCompile Include="$(srcdir)compiler.cc" />
+    <ClCompile Include="$(srcdir)preparse-data.cc" />
+    <ClCompile Include="$(srcdir)regexp-stack.cc" />
+    <ClCompile Include="$(srcdir)cpu-profiler.cc" />
+    <ClCompile Include="$(srcdir)counters.cc" />
+    <ClCompile Include="$(srcdir)string-search.cc" />
+    <ClCompile Include="$(srcdir)log-utils.cc" />
+    <ClCompile Include="$(srcdir)lithium-allocator.cc" />
+    <ClCompile Include="$(srcdir)version.cc" />
+    <ClCompile Include="$(srcdir)utils.cc" />
+    <ClCompile Include="$(srcdir)incremental-marking.cc" />
+    <ClCompile Include="$(srcdir)deoptimizer.cc" />
+    <ClCompile Include="$(srcdir)assembler.cc" />
+    <ClCompile Include="$(srcdir)handles.cc" />
+    <ClCompile Include="$(srcdir)allocation.cc" />
+    <ClCompile Include="$(srcdir)liveobjectlist.cc" />
+    <ClCompile Include="$(srcdir)preparser.cc" />
+    <ClCompile Include="$(srcdir)ic.cc" />
+    <ClCompile Include="$(srcdir)spaces.cc" />
+    <ClCompile Include="$(srcdir)v8-counters.cc" />
+    <ClCompile Include="$(srcdir)isolate.cc" />
+    <ClCompile Include="$(srcdir)cached-powers.cc" />
+    <ClCompile Include="$(srcdir)property.cc" />
+    <ClCompile Include="$(srcdir)safepoint-table.cc" />
+    <ClCompile Include="$(srcdir)stub-cache.cc" />
+    <ClCompile Include="$(srcdir)compilation-cache.cc" />
+    <ClCompile Include="$(srcdir)data-flow.cc" />
+    <ClCompile Include="$(srcdir)checks.cc" />
+    <ClCompile Include="$(srcdir)conversions.cc" />
+    <ClCompile Include="$(srcdir)bignum.cc" />
+    <ClCompile Include="$(srcdir)heap-profiler.cc" />
+    <ClCompile Include="$(srcdir)snapshot-common.cc" />
+    <ClCompile Include="$(srcdir)jsregexp.cc" />
+    <ClCompile Include="$(srcdir)regexp-macro-assembler.cc" />
+    <ClCompile Include="$(srcdir)v8utils.cc" />
+    <ClCompile Include="$(srcdir)liveedit.cc" />
+    <ClCompile Include="$(srcdir)scanner.cc" />
+    <ClCompile Include="$(srcdir)interpreter-irregexp.cc" />
+    <ClCompile Include="$(srcdir)heap.cc" />
+    <ClCompile Include="$(srcdir)scanner-character-streams.cc" />
+    <ClCompile Include="$(srcdir)parser.cc" />
+    <ClCompile Include="$(srcdir)variables.cc" />
+    <ClCompile Include="$(srcdir)v8conversions.cc" />
+    <ClCompile Include="$(srcdir)unicode.cc" />
+    <ClCompile Include="$(srcdir)objects-visiting.cc" />
+    <ClCompile Include="$(srcdir)flags.cc" />
+    <ClCompile Include="$(srcdir)objects.cc" />
+    <ClCompile Include="$(srcdir)prettyprinter.cc" />
+    <ClCompile Include="$(srcdir)hydrogen-instructions.cc" />
+    <ClCompile Include="$(srcdir)runtime.cc" />
+    <ClCompile Include="$(srcdir)codegen.cc" />
+    <ClCompile Include="$(srcdir)bignum-dtoa.cc" />
+    <ClCompile Include="$(srcdir)zone.cc" />
+    <ClCompile Include="$(srcdir)elements.cc" />
+    <ClCompile Include="$(srcdir)serialize.cc" />
+    <ClCompile Include="$(srcdir)regexp-macro-assembler-tracer.cc" />
+    <ClCompile Include="$(srcdir)messages.cc" />
+    <ClCompile Include="$(srcdir)v8.cc" />
+    <ClCompile Include="$(srcdir)profile-generator.cc" />
+    <ClCompile Include="$(srcdir)lithium.cc" />
+    <ClCompile Include="$(srcdir)v8threads.cc" />
+    <ClCompile Include="$(srcdir)atomicops_internals_x86_gcc.cc" />
+    <ClCompile Include="$(srcdir)fast-dtoa.cc" />
+    <ClCompile Include="$(srcdir)diy-fp.cc" />
+    <ClCompile Include="$(srcdir)ast.cc" />
+    <ClCompile Include="$(srcdir)strtod.cc" />
+    <ClCompile Include="$(srcdir)contexts.cc" />
+    <ClCompile Include="$(srcdir)rewriter.cc" />
+    <ClCompile Include="$(srcdir)mark-compact.cc" />
+    <ClCompile Include="$(srcdir)ia32\ic-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\debug-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\cpu-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\macro-assembler-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\frames-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\code-stubs-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\lithium-codegen-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\regexp-macro-assembler-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\full-codegen-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\lithium-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\builtins-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\disasm-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\codegen-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\deoptimizer-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\stub-cache-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\lithium-gap-resolver-ia32.cc" />
+    <ClCompile Include="$(srcdir)ia32\assembler-ia32.cc" />
+    <ClCompile Include="$(srcdir)extensions\externalize-string-extension.cc" />
+    <ClCompile Include="$(srcdir)extensions\gc-extension.cc" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <libname>v8_base</libname>
+  </PropertyGroup>
+
+  <Target Name="Build" DependsOnTargets="cl;lib" />
+</Project>

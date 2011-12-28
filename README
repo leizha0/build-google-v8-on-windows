@@ -1,0 +1,29 @@
+== prerequisites ==
+
+visual studio 2010 express
+python
+
+== prepare ==
+
+unzip google-v8 source code to e.g. [c:\v8]
+unzip python 2.6 to [c:\v8\tools\third_party\python_26]
+copy *.xml from this project to [c:\v8\msbuild]
+
+== build process ==
+
+cd c:\v8\msbuild
+msbuild all.xml
+
+== targets and dependencies ==
+
+v8_nosnapshot     v8_base
+      |              |  |
+	  V              V  |
+          mksnapshot    |
+		      |         |
+			  V         V
+	          v8_snapshot
+				|
+				V
+				d8
+
