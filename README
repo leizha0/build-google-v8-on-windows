@@ -18,12 +18,12 @@ msbuild all.xml
 
 v8_nosnapshot     v8_base
       |              |  |
-	  V              V  |
+      V              V  |
           mksnapshot    |
-		      |         |
-			  V         V
-	          v8_snapshot
-				|
-				V
-				d8
+              |         |
+              V         V
+              v8_snapshot
+                |
+                V
+                d8
 
